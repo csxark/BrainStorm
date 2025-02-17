@@ -4,7 +4,7 @@ import video2 from '../assets/video2.mp4'
 
 function Hero() {
   return (
-    <div className="flex flex-col items-center mt-6 lg:mt-20">
+    <div className="flex flex-col items-center mt-6 lg:mt-20 ">
         <h1 className="text-4xl sm:text-6xl lg:text-7xl text-center tracking-wide">
             Welcome to 
           <span className='bg-gradient-to-r from-orange-400 to-orange-700 text-transparent bg-clip-text font-bold'>
@@ -16,14 +16,14 @@ function Hero() {
         intuitive development tools. Get started today and turn your imagination
         into immersive reality!
         </p>
-        <div className="flex justtify-center my-10">
+        <div className="flex justtify-center my-10 lg:animate-on-scroll">
           <a href="#" className="bg-gradient-to-r from-orange-400 to-orange-700 text-white px-4 py-3 rounded-lg text-lg mx-3">Get Started 
           </a>
           <a href="" className="py-3 px-4 mx-3 rounded-md border">
             Documentation 
           </a>
         </div>
-        <div className="flex mt-10 justify-center">
+        <div className="flex mt-10 justify-center animate-on-scroll">
           <video autoPlay loop muted className='rounded-md w-1/2 border border-orange-400 shadow-orange-400 mx-2 my-4'>
             <source src={video1} type='video/mp4'/> 
           </video>

@@ -6,7 +6,7 @@ function Testimonals() {
             <h2 className="text-3xl sm:text-5xl lg:text-6xl text-center my-10 lg:my-20">
                 What People are saying
             </h2>
-            <div className="flex flex-wrap justify-center">
+            <div className="flex flex-wrap justify-center animate-on-scroll">
                 {testimonials.map((testimonial, index) => {
                     return (
                         <div key={index} className='w-full sm:w-1/2 lg:w-1/3 px-4 py-2'>

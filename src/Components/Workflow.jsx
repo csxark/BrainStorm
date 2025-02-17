@@ -12,10 +12,10 @@ function Workflow() {
             with BrainStorm
             </span>
         </h2>
-        <div className="flex flex-wrap justify-center">
+        <div className="flex flex-wrap justify-center lg:animate-on-scroll">
             <div className="p-2 w-full sm:w-1/2">
             <img src={codeImg} alt="code" /></div>
-        <div className="pt-12 w-full lg:w-1/2">
+        <div className="pt-12 w-full lg:w-1/2 animate-on-scroll">
             { checklistItems.map((item, index) =>{
                 return(
                     <div key={index} className="flex items-center mb-5">
