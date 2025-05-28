@@ -13,6 +13,8 @@ import ContactForm from './Components/ContactForm'
 import Dashboard from './Components/Dashboard'
 import PageTransition from './Components/PageTransition'
 import NotFound from './Components/NotFound'
+import Documentation from './Components/Document'
+
 
 function App() {
   const location = useLocation()
@@ -49,6 +51,7 @@ function App() {
             <Route path="/register" element={<RegisterForm />} />
             <Route path="/contact" element={<ContactForm />} />
             <Route path="/dashboard" element={<Dashboard />} />
+            <Route path='/documentation' element={<Documentation />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </PageTransition>
