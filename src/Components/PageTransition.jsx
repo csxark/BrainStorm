@@ -1,34 +1,37 @@
-import { useState, useEffect } from 'react'
-import { useLocation } from 'react-router-dom'
+import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
 function PageTransition({ children }) {
-  const [displayChildren, setDisplayChildren] = useState(children)
-  const [transitionStage, setTransitionStage] = useState('fadeIn')
-  const location = useLocation()
+  const location = useLocation();
+
+  const [displayChildren, setDisplayChildren] = useState(children);
+  const [transitionStage, setTransitionStage] = useState('fadeIn');
+  const [prevPathname, setPrevPathname] = useState(location.pathname);
 
   useEffect(() => {
-    if (children.key !== displayChildren.key) {
-      setTransitionStage('fadeOut')
+    if (location.pathname !== prevPathname) {
+      setTransitionStage('fadeOut');
     }
-  }, [children, displayChildren])
+  }, [location.pathname, prevPathname]);
 
-  const handleAnimationEnd = () => {
+  const handleTransitionEnd = () => {
     if (transitionStage === 'fadeOut') {
-      setDisplayChildren(children)
-      setTransitionStage('fadeIn')
+      setDisplayChildren(children);
+      setPrevPathname(location.pathname);
+      setTransitionStage('fadeIn');
     }
-  }
+  };
 
   return (
     <div
-      className={`transition-opacity duration-300 ${
+      className={`transition-opacity duration-300 ease-in-out ${
         transitionStage === 'fadeIn' ? 'opacity-100' : 'opacity-0'
       }`}
-      onAnimationEnd={handleAnimationEnd}
+      onTransitionEnd={handleTransitionEnd}
     >
       {displayChildren}
     </div>
-  )
+  );
 }
 
-export default PageTransition
+export default PageTransition;
