@@ -53,12 +53,10 @@ function LoginForm() {
     if (validateForm()) {
       setLoading(true)
       
-      // Mock API call
       setTimeout(() => {
         setLoading(false)
         // Store user data in memory instead of localStorage
         const userData = { email: formData.email }
-        // You can pass this to a context or state management solution
         navigate('/dashboard')
       }, 1000)
     }
